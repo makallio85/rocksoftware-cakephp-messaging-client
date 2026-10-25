@@ -1,0 +1,479 @@
+# Finnish translations for makallio85/rocksoftware-cakephp-messaging-client.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: fi\n"
+
+msgid "You may not change the messaging settings."
+msgstr "Sinulla ei ole oikeutta muuttaa viestinnän asetuksia."
+
+msgid "Not saved. {0}"
+msgstr "Ei tallennettu. {0}"
+
+msgid "Saved. Use \"Test connection\" to confirm the gateway accepts the token."
+msgstr "Tallennettu. Varmista \"Testaa yhteys\" -painikkeella, että viestintäpalvelu hyväksyy tunnisteen."
+
+msgid "The gateway accepted a test message to {0}. It is trapped there: the token or the sender is in test mode, so it reaches no one."
+msgstr "Viestintäpalvelu otti vastaan testiviestin osoitteeseen {0}. Palvelu pysäyttää sen: tunniste tai lähettäjä on testitilassa, joten viesti ei mene kenellekään."
+
+msgid "The gateway accepted a test message to {0}."
+msgstr "Viestintäpalvelu otti vastaan testiviestin osoitteeseen {0}."
+
+msgid "Not sent yet: {0} It is tried again shortly."
+msgstr "Ei vielä lähetetty: {0} Lähetystä yritetään pian uudelleen."
+
+msgid "The test message was not sent: {0}"
+msgstr "Testiviestiä ei lähetetty: {0}"
+
+msgid "The stored API token cannot be decrypted. Was the security salt changed? Enter the token again."
+msgstr "Tallennettua API-tunnistetta ei voi purkaa. Onko suojaussuola vaihtunut? Anna tunniste uudelleen."
+
+msgid "Enter the gateway address and an API token first."
+msgstr "Anna ensin viestintäpalvelun osoite ja API-tunniste."
+
+msgid "Enter the address the test message goes to."
+msgstr "Anna osoite, johon testiviesti lähetetään."
+
+msgid "this application"
+msgstr "tämä sovellus"
+
+msgid "Test message from {0}"
+msgstr "Testiviesti: {0}"
+
+msgid "This is a test message from {0}. If you are reading it, {0} reaches the messaging gateway and the gateway delivers its messages."
+msgstr "Tämä on testiviesti sovelluksesta {0}. Jos luet tätä, {0} tavoittaa viestintäpalvelun ja palvelu toimittaa sen viestit perille."
+
+msgid "Test message from {0}: it reaches you through the messaging gateway."
+msgstr "Testiviesti sovelluksesta {0}: se tavoittaa sinut viestintäpalvelun kautta."
+
+msgid "Enter the gateway as https:// and a host name only, such as https://messaging.example.com."
+msgstr "Anna palvelun osoite muodossa https:// ja palvelimen nimi, ei polkua, esimerkiksi https://messaging.example.com."
+
+msgid "\"{0}\" is not a valid host name."
+msgstr "\"{0}\" ei ole kelvollinen palvelimen nimi."
+
+msgid "The port must be between 1 and 65535."
+msgstr "Portin on oltava välillä 1–65535."
+
+msgid "The messaging gateway did not confirm the API token."
+msgstr "Viestintäpalvelu ei vahvistanut API-tunnistetta."
+
+msgid "The messaging gateway did not answer. Sending again with the same external_ref is safe."
+msgstr "Viestintäpalvelu ei vastannut. Uudelleenlähetys samalla external_ref-tunnisteella on turvallinen."
+
+msgid "The messaging gateway did not answer."
+msgstr "Viestintäpalvelu ei vastannut."
+
+msgid "The messaging gateway answered HTTP {0} without JSON."
+msgstr "Viestintäpalvelu vastasi HTTP {0} ilman JSONia."
+
+msgid "The messaging gateway answered with a redirect (HTTP {0}), which is never followed. Check the gateway address."
+msgstr "Viestintäpalvelu vastasi uudelleenohjauksella (HTTP {0}), jota ei koskaan seurata. Tarkista palvelun osoite."
+
+msgid "The messaging gateway does not accept the API token (HTTP 401). Issue a new token in the gateway console."
+msgstr "Viestintäpalvelu ei hyväksy API-tunnistetta (HTTP 401). Luo uusi tunniste palvelun hallintakonsolissa."
+
+msgid "The messaging gateway refused the request (HTTP 403). Check the token's permissions and channels, and that its IP allowlist includes this server."
+msgstr "Viestintäpalvelu torjui pyynnön (HTTP 403). Tarkista tunnisteen oikeudet ja kanavat sekä se, että sen IP-sallittujen lista sisältää tämän palvelimen."
+
+msgid "The messaging gateway does not know that sender or message (HTTP 404)."
+msgstr "Viestintäpalvelu ei tunne tätä lähettäjää tai viestiä (HTTP 404)."
+
+msgid "The messaging gateway asks to slow down: the token has reached its send quota or request rate (HTTP 429)."
+msgstr "Viestintäpalvelu pyytää hidastamaan: tunniste on saavuttanut lähetyskiintiönsä tai pyyntörajansa (HTTP 429)."
+
+msgid "The messaging gateway's API is switched off in its console (HTTP 503)."
+msgstr "Viestintäpalvelun rajapinta on kytketty pois päältä sen hallintakonsolissa (HTTP 503)."
+
+msgid "The messaging gateway failed (HTTP {0})."
+msgstr "Viestintäpalvelussa tapahtui virhe (HTTP {0})."
+
+msgid "The messaging gateway refused the request (HTTP {0})."
+msgstr "Viestintäpalvelu torjui pyynnön (HTTP {0})."
+
+msgid "The messaging gateway answered the send without a known result."
+msgstr "Viestintäpalvelu vastasi lähetykseen ilman tunnettua tulosta."
+
+msgid "Email"
+msgstr "Sähköposti"
+
+msgid "SMS"
+msgstr "Tekstiviesti"
+
+msgid "Waiting to be sent"
+msgstr "Odottaa lähetystä"
+
+msgid "Accepted by the gateway"
+msgstr "Vastaanotettu palveluun"
+
+msgid "Not sent: recipient blocked"
+msgstr "Ei lähetetty: vastaanottaja estetty"
+
+msgid "Failed"
+msgstr "Epäonnistui"
+
+msgid "Not sent: delivery is off"
+msgstr "Ei lähetetty: lähetys pois päältä"
+
+msgid "It expired before the gateway accepted it."
+msgstr "Viesti vanheni ennen kuin viestintäpalvelu otti sen vastaan."
+
+msgid "The messaging gateway is not set up yet."
+msgstr "Viestintäpalvelua ei ole vielä määritetty."
+
+msgid "The recipient is on the gateway's block list."
+msgstr "Vastaanottaja on viestintäpalvelun estolistalla."
+
+msgid "Gave up after {0} attempts. {1}"
+msgstr "Luovuttiin {0} yrityksen jälkeen. {1}"
+
+msgid "Messaging"
+msgstr "Viestintä"
+
+msgid "Accepted, trapped as a test"
+msgstr "Vastaanotettu, pysäytetty testinä"
+
+msgid "Waiting for another attempt ({0})"
+msgstr "Odottaa uutta yritystä ({0})"
+
+msgid "Email and SMS go out through the messaging gateway. This application keeps only the gateway's address and a token."
+msgstr "Sähköpostit ja tekstiviestit lähtevät viestintäpalvelun kautta. Tämä sovellus tallentaa vain palvelun osoitteen ja tunnisteen."
+
+msgid "State"
+msgstr "Tila"
+
+msgid "This application: sending on"
+msgstr "Tämä sovellus: lähetys päällä"
+
+msgid "This application: sending off"
+msgstr "Tämä sovellus: lähetys pois päältä"
+
+msgid "Gateway: sending on"
+msgstr "Viestintäpalvelu: lähetys päällä"
+
+msgid "The gateway's own switch is on."
+msgstr "Palvelun oma kytkin on päällä."
+
+msgid "Gateway: sending off"
+msgstr "Viestintäpalvelu: lähetys pois päältä"
+
+msgid "The gateway's own switch is off: nothing sent through it reaches anyone."
+msgstr "Palvelun oma kytkin on pois päältä: mikään sen kautta lähetetty ei mene perille."
+
+msgid "Gateway: not checked"
+msgstr "Viestintäpalvelu: ei tarkistettu"
+
+msgid "Press \"Test connection\" to see the gateway's switch."
+msgstr "Paina \"Testaa yhteys\" nähdäksesi palvelun kytkimen tilan."
+
+msgid "Live token"
+msgstr "Tuotantotunniste"
+
+msgid "Messages sent with it reach people."
+msgstr "Sillä lähetetyt viestit menevät perille."
+
+msgid "Test token"
+msgstr "Testitunniste"
+
+msgid "The gateway traps everything sent with this token: messages reach no one."
+msgstr "Palvelu pysäyttää kaiken, mitä tällä tunnisteella lähetetään: viestit eivät mene perille."
+
+msgid "Token: not checked"
+msgstr "Tunniste: ei tarkistettu"
+
+msgid "Press \"Test connection\" to see whether it is a test token."
+msgstr "Paina \"Testaa yhteys\" nähdäksesi, onko kyseessä testitunniste."
+
+msgid "No token is set yet."
+msgstr "Tunnistetta ei ole vielä annettu."
+
+msgid "Connection"
+msgstr "Yhteys"
+
+msgid "Gateway address"
+msgstr "Palvelun osoite"
+
+msgid "https:// and the host name, no path."
+msgstr "https:// ja palvelimen nimi, ei polkua."
+
+msgid "API token"
+msgstr "API-tunniste"
+
+msgid "Stored · type a new one to replace it"
+msgstr "Tallennettu · kirjoita uusi vaihtaaksesi"
+
+msgid "Not stored yet"
+msgstr "Ei vielä tallennettu"
+
+msgid "Remove the stored token"
+msgstr "Poista tallennettu tunniste"
+
+msgid "Issued for this application in the gateway console, with the permissions system.status.read and message.send."
+msgstr "Luodaan tälle sovellukselle palvelun hallintakonsolissa oikeuksin system.status.read ja message.send."
+
+msgid "sending switched off"
+msgstr "lähetys kytketty pois"
+
+msgid "not listed by the gateway now"
+msgstr "palvelu ei nyt listaa tätä"
+
+msgid "Send email as"
+msgstr "Sähköpostin lähettäjä"
+
+msgid "Send SMS as"
+msgstr "Tekstiviestin lähettäjä"
+
+msgid "The gateway's default"
+msgstr "Palvelun oletus"
+
+msgid "The list comes from the gateway."
+msgstr "Lista tulee palvelusta."
+
+msgid "Send as"
+msgstr "Lähettäjä"
+
+msgid "The senders are listed here once the gateway answers. Until then the gateway's default is used."
+msgstr "Lähettäjät näkyvät tässä, kun palvelu vastaa. Siihen asti käytetään palvelun oletusta."
+
+msgid "Save"
+msgstr "Tallenna"
+
+msgid "Test connection"
+msgstr "Testaa yhteys"
+
+msgid "The gateway answered. The token {0} is valid."
+msgstr "Palvelu vastasi. Tunniste {0} on voimassa."
+
+msgid "It may send as: {0}."
+msgstr "Se saa lähettää: {0}."
+
+msgid "It may not send as any connection yet."
+msgstr "Se ei saa vielä lähettää miltään yhteydeltä."
+
+msgid "The token lacks the permission {0}."
+msgstr "Tunnisteelta puuttuu oikeus {0}."
+
+msgid "Test message"
+msgstr "Testiviesti"
+
+msgid "Recipient"
+msgstr "Vastaanottaja"
+
+msgid "An email address gets an email, a phone number an SMS."
+msgstr "Sähköpostiosoitteeseen lähtee sähköposti, puhelinnumeroon tekstiviesti."
+
+msgid "Send a test message"
+msgstr "Lähetä testiviesti"
+
+msgid "Latest outbound messages"
+msgstr "Viimeisimmät lähtevät viestit"
+
+msgid "Nothing has been sent yet."
+msgstr "Mitään ei ole vielä lähetetty."
+
+msgid "Time"
+msgstr "Aika"
+
+msgid "Channel"
+msgstr "Kanava"
+
+msgid "Subject"
+msgstr "Aihe"
+
+msgid "Status"
+msgstr "Tila"
+
+msgid "Sending {0} is on, at {1} only."
+msgstr "Lähetys ({0}) on päällä, vain osoitteessa {1}."
+
+msgid "Sending {0} is off."
+msgstr "Lähetys ({0}) on pois päältä."
+
+msgid "Not sent: sending {0} is switched off in this application. Test the connection instead; it sends nothing."
+msgstr "Ei lähetetty: lähetys ({0}) on kytketty pois päältä tässä sovelluksessa. Testaa sen sijaan yhteys; se ei lähetä mitään."
+
+msgid "Sending cannot be switched on: the application's address (App.fullBaseUrl) is not configured."
+msgstr "Lähetystä ei voi kytkeä päälle: sovelluksen osoitetta (App.fullBaseUrl) ei ole määritetty."
+
+msgid "Sending {0} is switched off in this application."
+msgstr "Lähetys ({0}) on kytketty pois päältä tässä sovelluksessa."
+
+msgid "Sending is switched on at this address."
+msgstr "Lähetys on kytketty päälle tässä osoitteessa."
+
+msgid "Sending is switched off at this address. Messages are logged but never sent."
+msgstr "Lähetys on kytketty pois päältä tässä osoitteessa. Viestit kirjataan, mutta niitä ei lähetetä."
+
+msgid "The senders are saved."
+msgstr "Lähettäjät tallennettu."
+
+msgid "The senders are refreshed from the gateway."
+msgstr "Lähettäjät päivitetty palvelusta."
+
+msgid "The default sender must be an enabled sender of its channel."
+msgstr "Oletuslähettäjän on oltava kanavansa käytössä oleva lähettäjä."
+
+msgid "The gateway could not send it."
+msgstr "Viestintäpalvelu ei voinut lähettää viestiä."
+
+msgid "Sent by the provider"
+msgstr "Lähetetty operaattorille"
+
+msgid "Delivered"
+msgstr "Perillä"
+
+msgid "Trapped: a test, reached no one"
+msgstr "Pysäytetty: testi, ei mennyt kenellekään"
+
+msgid "Cancelled"
+msgstr "Peruttu"
+
+msgid "Text messages"
+msgstr "Tekstiviestit"
+
+msgid "Connection not set up"
+msgstr "Yhteyttä ei ole määritetty"
+
+msgid "Connection not tested"
+msgstr "Yhteyttä ei ole testattu"
+
+msgid "Connection not working"
+msgstr "Yhteys ei toimi"
+
+msgid "Connection works: test token"
+msgstr "Yhteys toimii: testitunniste"
+
+msgid "Connection works: gateway sending off"
+msgstr "Yhteys toimii: palvelun lähetys pois päältä"
+
+msgid "Connection to the gateway OK"
+msgstr "Yhteys palveluun kunnossa"
+
+msgid "No longer at the gateway"
+msgstr "Ei enää palvelussa"
+
+msgid "Sending off at the gateway"
+msgstr "Lähetys pois päältä palvelussa"
+
+msgid "Test mode: reaches no one"
+msgstr "Testitila: ei mene perille"
+
+msgid "Shared by another application"
+msgstr "Jaettu toiselta sovellukselta"
+
+msgid "Live"
+msgstr "Oikea"
+
+msgid "Channels and senders"
+msgstr "Kanavat ja lähettäjät"
+
+msgid "Sent messages"
+msgstr "Lähetetyt viestit"
+
+msgid "{0} on"
+msgstr "{0} päällä"
+
+msgid "{0} on at another address"
+msgstr "{0} päällä toisessa osoitteessa"
+
+msgid "{0} off"
+msgstr "{0} pois"
+
+msgid "Messaging settings"
+msgstr "Viestinnän asetukset"
+
+msgid "Sending cannot be switched on: this application's address (App.fullBaseUrl) is not configured."
+msgstr "Lähetystä ei voi kytkeä päälle: tämän sovelluksen osoitetta (App.fullBaseUrl) ei ole määritetty."
+
+msgid "Sending is on only at {0}. A copy of the database anywhere else is always off."
+msgstr "Lähetys on päällä vain osoitteessa {0}. Kopio tietokannasta muualla on aina pois päältä."
+
+msgid "Refresh the list from the gateway"
+msgstr "Päivitä lista palvelusta"
+
+msgid "Never switched on"
+msgstr "Ei koskaan kytketty päälle"
+
+msgid "Switched on by {0} {1}"
+msgstr "Kytki päälle {0} {1}"
+
+msgid "Switched off by {0} {1}"
+msgstr "Kytki pois {0} {1}"
+
+msgid "Sending {0}"
+msgstr "Lähetys: {0}"
+
+msgid "Sending on"
+msgstr "Lähetys päällä"
+
+msgid "Sending off"
+msgstr "Lähetys pois"
+
+msgid "Switched on at {0}, so it is off here. Switch it on here to send from this address."
+msgstr "Kytketty päälle osoitteessa {0}, joten täällä pois päältä. Kytke päälle täällä lähettääksesi tästä osoitteesta."
+
+msgid "Messages recorded while sending is off are not sent afterwards."
+msgstr "Pois päältä -aikana syntyneitä viestejä ei lähetetä jälkikäteen."
+
+msgid "No senders yet. Test the connection or refresh the list from the gateway; until then the gateway's default is used."
+msgstr "Ei vielä lähettäjiä. Testaa yhteys tai päivitä lista palvelusta; siihen asti käytetään palvelun oletusta."
+
+msgid "Sender"
+msgstr "Lähettäjä"
+
+msgid "Display name"
+msgstr "Näkyvä nimi"
+
+msgid "Code"
+msgstr "Tunnus koodissa"
+
+msgid "At the gateway"
+msgstr "Palvelussa"
+
+msgid "Default"
+msgstr "Oletus"
+
+msgid "In use"
+msgstr "Käytössä"
+
+msgid "Default: {0}"
+msgstr "Oletus: {0}"
+
+msgid "{0} in use"
+msgstr "{0} käytössä"
+
+msgid "No default: the gateway's default for this application"
+msgstr "Ei oletusta: palvelun oletus tälle sovellukselle"
+
+msgid "Save senders"
+msgstr "Tallenna lähettäjät"
+
+msgid "Issued for this application in the gateway console, with the permissions system.status.read, message.send and message.read."
+msgstr "Luodaan tälle sovellukselle palvelun hallintakonsolissa oikeuksin system.status.read, message.send ja message.read."
+
+msgid "Tested {0}: {1}"
+msgstr "Testattu {0}: {1}"
+
+msgid "The token may not send."
+msgstr "Tunniste ei saa lähettää."
+
+msgid "The gateway answered {0}. The token {1} is valid and may send."
+msgstr "Palvelu vastasi {0}. Tunniste {1} on voimassa ja saa lähettää."
+
+msgid "The gateway's own sending switch is off: nothing sent through it reaches anyone."
+msgstr "Palvelun oma lähetyskytkin on pois päältä: mikään sen kautta lähetetty ei mene perille."
+
+msgid "The gateway's own sending switch is on."
+msgstr "Palvelun oma lähetyskytkin on päällä."
+
+msgid "It is a test token: the gateway traps everything sent with it."
+msgstr "Se on testitunniste: palvelu pysäyttää kaiken sillä lähetetyn."
+
+msgid "The channel's default"
+msgstr "Kanavan oletus"
+
+msgid "default"
+msgstr "oletus"
+
+msgid "The test message goes out only when the chosen channel's sending is on, on the Channels and senders tab."
+msgstr "Testiviesti lähtee vain, jos valitun kanavan lähetys on päällä Kanavat ja lähettäjät -välilehdellä."
