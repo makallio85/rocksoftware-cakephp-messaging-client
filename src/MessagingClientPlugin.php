@@ -61,8 +61,6 @@ class MessagingClientPlugin extends BasePlugin
      * - `testRecipient`: the address the settings page's test message is
      *   offered to; a callable receiving the identity and returning a string or
      *   null. Null reads the identity's `email`.
-     * - `appName`: how the test message names the application; null for "this
-     *   application".
      * - `retryDelays`: seconds to wait before each further attempt of a message
      *   that met a temporary error. When they run out, the message ends failed.
      * - `deliverBatchSize`: how many waiting messages one `deliver` run sends.
@@ -82,7 +80,6 @@ class MessagingClientPlugin extends BasePlugin
         'healthFailureThreshold' => 5,
         'settingsAccess' => null,
         'testRecipient' => null,
-        'appName' => null,
         'retryDelays' => [60, 300, 900, 1800, 3600, 7200, 14400],
         'deliverBatchSize' => 50,
         'latestMessagesLimit' => 20,

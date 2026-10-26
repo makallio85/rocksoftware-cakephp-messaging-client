@@ -20,6 +20,8 @@ use RockSoftware\MessagingClient\Model\Entity\Setting;
 use RockSoftware\MessagingClient\Model\Table\SendersTable;
 use RockSoftware\MessagingClient\Model\Table\SettingsTable;
 use RockSoftware\MessagingClient\SendRequest;
+use RockSoftware\Settings\Settings;
+use RockSoftware\Settings\SettingsPlugin;
 use SensitiveParameter;
 use Throwable;
 
@@ -292,10 +294,8 @@ class MessagingSettings
                 __d('rock_software_messaging_client', 'Enter the address the test message goes to.'),
             );
         }
-        $appName = MessagingClientPlugin::setting('appName');
-        $appName = is_string($appName) && $appName !== ''
-            ? $appName
-            : __d('rock_software_messaging_client', 'this application');
+        $appName = trim((string)Settings::get(SettingsPlugin::APPLICATION_NAME));
+        $appName = $appName !== '' ? $appName : __d('rock_software_messaging_client', 'this application');
         $externalRef = self::TEST_EXTERNAL_REF_PREFIX . Text::uuid();
         $context = ['purpose' => 'messaging_client_test'];
 

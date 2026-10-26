@@ -24,10 +24,16 @@ An application never configures messaging itself; it only sends through `Messeng
 
 ## Installing in an application
 
-1. **Composer.** Run `composer require makallio85/rocksoftware-cakephp-messaging-client:^1.0`.
-   Until the package is on Packagist, add the repository as a `vcs` entry under `repositories`.
-2. **Plugin.** Add `$this->addPlugin(\RockSoftware\MessagingClient\MessagingClientPlugin::class);`
-   to `Application::bootstrap()`.
+1. **Composer.** Run `composer require makallio85/rocksoftware-cakephp-messaging-client:^1.1`. It
+   brings [`makallio85/rocksoftware-cakephp-settings`](https://github.com/makallio85/rocksoftware-cakephp-settings),
+   whose `application.name` names the application in the test message.
+2. **Plugins.** Add the settings plugin (installed as its README says) and this one to
+   `Application::bootstrap()`:
+
+   ```php
+   $this->addPlugin(\RockSoftware\Settings\SettingsPlugin::class);
+   $this->addPlugin(\RockSoftware\MessagingClient\MessagingClientPlugin::class);
+   ```
 3. **Migrations.** Run `bin/cake migrations migrate -p RockSoftware/MessagingClient` in the deploy
    entrypoint, and migrate the plugin in `tests/bootstrap.php` too.
 4. **Access.** In `config/app.php`, set who may open the settings page:
@@ -55,7 +61,6 @@ configures messaging itself.
 | Setting | Default | |
 |---|---|---|
 | `settingsAccess` | `null` | Who may open the settings page: `fn($identity, $request): bool`. Null means anyone signed in. It is asked after the application's own authentication, which sends a signed-out visitor to sign in as on any other page. Nobody who is not signed in ever gets in |
-| `appName` | `null` | How the test message names the application |
 | `locale` | `null` | The language of the plugin's texts when it differs from the application's |
 | `breadcrumbParent` | `null` | For an application whose pages write their breadcrumb in the template: the page above the settings page, a title or `['title' => …, 'url' => …]`. The page then shows "parent › Messaging" |
 | `isTestMessageEnabled` | `true` | Whether the settings page offers a test message |
@@ -236,7 +241,8 @@ its tab:
 - **Kanavat ja lähettäjät** (`channels`, the default): each channel's sending switch, its senders,
   and refreshing the senders from the gateway.
 - **Yhteys** (`connection`): the gateway's address and token, the connection test and its last
-  result, and the test message.
+  result, and the test message. The test message names the application by the settings plugin's
+  `application.name`.
 - **Lähetetyt viestit** (`messages`): the latest outbound messages.
 
 On a phone the tables become cards.
@@ -273,6 +279,13 @@ Events on the global event manager, for the application's audit log. Each carrie
 | `RockSoftwareMessagingClient.sendersChanged` | `codes` |
 | `RockSoftwareMessagingClient.sendingSwitched` | `actor`, `channel`, `isSendingEnabled` |
 | `RockSoftwareMessagingClient.testMessageSent` | `outboundMessage` |
+
+### Moving to 1.1
+
+The test message names the application by the settings plugin's `application.name`.
+`RockSoftwareMessagingClient.appName` is no longer read: remove it, load and migrate the settings
+plugin, and seed the name in a migration of the application's own with
+`Settings::set('application.name', 'Example App')`.
 
 ### Moving an application's existing configuration over
 
