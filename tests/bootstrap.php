@@ -8,6 +8,8 @@ use Cake\Datasource\ConnectionManager;
 use Cake\Utility\Security;
 use Migrations\TestSuite\Migrator;
 use RockSoftware\MessagingClient\MessagingClientPlugin;
+use RockSoftware\Settings\Settings;
+use RockSoftware\Settings\SettingsPlugin;
 
 require dirname(__DIR__) . '/vendor/autoload.php';
 
@@ -50,8 +52,6 @@ Configure::write('App', [
         'locales' => [ROOT . DS . 'resources' . DS . 'locales' . DS],
     ],
 ]);
-// The few lines an application writes; everything else is a default.
-Configure::write('RockSoftwareMessagingClient', ['appName' => 'Test App']);
 Security::setSalt('rocksoftware-messaging-client-test-salt-0123456789abcdef');
 
 mb_internal_encoding('UTF-8');
@@ -75,9 +75,17 @@ Cache::setConfig([
     'default' => ['className' => 'Array'],
 ]);
 
+// The settings plugin, which every application loads, holds the application's name.
+Plugin::getCollection()->add(new SettingsPlugin());
+SettingsPlugin::applyDefaults();
+SettingsPlugin::declareApplicationSettings();
 Plugin::getCollection()->add(new MessagingClientPlugin(['path' => dirname(__DIR__) . DS]));
 MessagingClientPlugin::applyDefaults();
 MessagingClientPlugin::loadTranslations();
 // As an application's test bootstrap does: migrate, then empty every table.
 // The type tables' system rows come back from the plugin's fixtures.
-(new Migrator())->run(['connection' => 'test', 'plugin' => 'RockSoftware/MessagingClient']);
+(new Migrator())->runMany([
+    ['connection' => 'test', 'plugin' => SettingsPlugin::NAME],
+    ['connection' => 'test', 'plugin' => 'RockSoftware/MessagingClient'],
+]);
+Settings::set(SettingsPlugin::APPLICATION_NAME, 'Test App');

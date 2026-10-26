@@ -19,6 +19,8 @@ use RockSoftware\MessagingClient\Service\MessagingSettings;
 use RockSoftware\MessagingClient\Service\SecretCipher;
 use RockSoftware\MessagingClient\TestSuite\Fixture\MessagingClientFixtures;
 use RockSoftware\MessagingClient\TestSuite\MessagingTestTrait;
+use RockSoftware\Settings\Settings;
+use RockSoftware\Settings\SettingsPlugin;
 
 class SettingsControllerTest extends TestCase
 {
@@ -211,6 +213,27 @@ class SettingsControllerTest extends TestCase
         $this->assertStringStartsWith('messaging-client-test-', $gateway->acceptedMessages()[0]['external_ref']);
         $message = $this->events[0]->getData('outboundMessage');
         $this->assertSame(OutboundMessageStatusType::ACCEPTED, $message->statusValue());
+    }
+
+    public function testTheTestMessageNamesTheApplicationByTheSettingsPlugin(): void
+    {
+        $this->useFakeGateway();
+        $this->signIn();
+        Settings::set(SettingsPlugin::APPLICATION_NAME, 'Example Console');
+        Configure::write('RockSoftwareMessagingClient.appName', 'Old Name');
+
+        try {
+            $this->post('/messaging-client/settings/send-test', ['recipient' => 'user@example.test']);
+        } finally {
+            Settings::set(SettingsPlugin::APPLICATION_NAME, 'Test App');
+            Configure::delete('RockSoftwareMessagingClient.appName');
+        }
+
+        $this->assertMessageSent([
+            'channel' => 'email',
+            'to' => 'user@example.test',
+            'subject' => 'Test message from Example Console',
+        ]);
     }
 
     public function testATestMessageDefaultsToTheSignedInUsersOwnAddress(): void
